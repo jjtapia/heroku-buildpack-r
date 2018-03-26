@@ -220,14 +220,19 @@ popd > /dev/null
 #fakechroot fakeroot chroot $CHROOT_DIR \
 #file /usr/lib/apt/methods/bzip2
 
-fakechroot fakeroot chroot $CHROOT_DIR \
-rm /usr/lib/apt/methods/bzip2
+#fakechroot fakeroot chroot $CHROOT_DIR \
+#rm /usr/lib/apt/methods/bzip2
 
 #fakechroot fakeroot chroot $CHROOT_DIR \
 #ln -s store /usr/lib/apt/methods/bzip2
 
+fakechroot fakeroot chroot $CHROOT_DIR \
+rm -rf /usr/lib/apt/methods/
 
-ln -s /usr/lib/apt/methods/gzip $CHROOT_DIR/usr/lib/apt/methods/bzip2
+fakechroot fakeroot chroot $CHROOT_DIR \
+mkdir /usr/lib/apt/methods/
+
+fakeroot mount --bind /usr/lib/apt/methods $CHROOT_DIR/usr/lib/apt/methods
 
 fakechroot fakeroot chroot $CHROOT_DIR \
 stat /usr/lib/apt/methods/bzip2
