@@ -220,17 +220,17 @@ stat /usr/lib/apt/methods/bzip2
 fakechroot fakeroot chroot $CHROOT_DIR \
 file /usr/lib/apt/methods/bzip2
 
-fakechroot fakeroot chroot $CHROOT_DIR \
-rm /usr/lib/apt/methods/bzip2
+#fakechroot fakeroot chroot $CHROOT_DIR \
+#rm /usr/lib/apt/methods/bzip2
 
-fakechroot fakeroot chroot $CHROOT_DIR \
-ln -s store /usr/lib/apt/methods/bzip2
+#fakechroot fakeroot chroot $CHROOT_DIR \
+#ln -s store /usr/lib/apt/methods/bzip2
 
-fakechroot fakeroot chroot $CHROOT_DIR \
-stat /usr/lib/apt/methods/bzip2
+#fakechroot fakeroot chroot $CHROOT_DIR \
+#stat /usr/lib/apt/methods/bzip2
 
-fakechroot fakeroot chroot $CHROOT_DIR \
-file /usr/lib/apt/methods/bzip2
+#fakechroot fakeroot chroot $CHROOT_DIR \
+#file /usr/lib/apt/methods/bzip2
 
 fakechroot fakeroot chroot $CHROOT_DIR \
 ls -l /usr/lib/apt/methods/
