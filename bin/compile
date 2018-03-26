@@ -239,7 +239,7 @@ if [[ -f "$BUILD_DIR/Aptfile" ]]; then
   topic "Installing binary dependencies from Aptfile"
 
   fakechroot fakeroot chroot $CHROOT_DIR \
-  apt-get -o Acquire::CompressionTypes::Order::=gzip update
+  apt-get -o Acquire::CompressionTypes::Order::=gz update
 
   # TODO: add support for deb files
 
