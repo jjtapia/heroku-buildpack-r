@@ -224,7 +224,7 @@ fakechroot fakeroot chroot $CHROOT_DIR \
 rm /usr/lib/apt/methods/bzip2
 
 fakechroot fakeroot chroot $CHROOT_DIR \
-ln -s /usr/lib/apt/methods/store /usr/lib/apt/methods/bzip2
+ln -s store /usr/lib/apt/methods/bzip2
 
 fakechroot fakeroot chroot $CHROOT_DIR \
 stat /usr/lib/apt/methods/bzip2
@@ -243,7 +243,7 @@ if [[ -f "$BUILD_DIR/Aptfile" ]]; then
   topic "Installing binary dependencies from Aptfile"
 
   fakechroot fakeroot chroot $CHROOT_DIR \
-  apt-get -o Acquire::CompressionTypes::Order::=gz update
+  apt-get -o Acquire::CompressionTypes::Order::=uncompressed update
 
   # TODO: add support for deb files
 
