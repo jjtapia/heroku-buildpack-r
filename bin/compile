@@ -214,18 +214,6 @@ fakechroot fakeroot chroot $CHROOT_DIR \
 
 popd > /dev/null
 
-fakechroot fakeroot chroot $CHROOT_DIR \
-stat /usr/lib/apt/methods/bzip2
-
-fakechroot fakeroot chroot $CHROOT_DIR \
-file /usr/lib/apt/methods/bzip2
-
-#fakechroot fakeroot chroot $CHROOT_DIR \
-#rm /usr/lib/apt/methods/bzip2
-
-#fakechroot fakeroot chroot $CHROOT_DIR \
-#ln -s store /usr/lib/apt/methods/bzip2
-
 #fakechroot fakeroot chroot $CHROOT_DIR \
 #stat /usr/lib/apt/methods/bzip2
 
@@ -233,9 +221,27 @@ file /usr/lib/apt/methods/bzip2
 #file /usr/lib/apt/methods/bzip2
 
 fakechroot fakeroot chroot $CHROOT_DIR \
+rm /usr/lib/apt/methods/bzip2
+
+#fakechroot fakeroot chroot $CHROOT_DIR \
+#ln -s store /usr/lib/apt/methods/bzip2
+
+
+ln -s /usr/lib/apt/methods/gzip $CHROOT_DIR/usr/lib/apt/methods/bzip2
+
+fakechroot fakeroot chroot $CHROOT_DIR \
+stat /usr/lib/apt/methods/bzip2
+
+fakechroot fakeroot chroot $CHROOT_DIR \
+file /usr/lib/apt/methods/bzip2
+
+fakechroot fakeroot chroot $CHROOT_DIR \
 ls -l /usr/lib/apt/methods/
 
 ls -l /usr/lib/apt/methods/
+
+
+
 
 # Aptfile?
 if [[ -f "$BUILD_DIR/Aptfile" ]]; then
